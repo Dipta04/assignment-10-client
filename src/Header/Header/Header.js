@@ -1,11 +1,23 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { useContext } from 'react';
+import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
+
+    const {user,logOut} = useContext(AuthContext);
+
+    const handleLogOut = () =>{
+        logOut()
+        .then( () => {})
+        .catch( error => console.error(error))
+    }
+
     return (
         <div>
 
@@ -22,11 +34,25 @@ const Header = () => {
                         </Nav>
                         <Nav>
                             <Nav.Link>
+                                {
+                                user?.uid
+                                 ?
+                                    <Button variant="outline-secondary" className='text-white' onClick={handleLogOut}>Log out</Button>
+                                 :
+                                <>
                                 <Link className='text-decoration-none text-white me-3' to='/login'>Login</Link>
                                 <Link className='text-decoration-none text-white' to='/register'>Register</Link>
+                                </>
+                                 }
                             </Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
+                                {
+                                    user?.photoURL
+                                        ?
+                                    <Image style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
+                                     :
+                                    <FaUser></FaUser>
+                                }
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

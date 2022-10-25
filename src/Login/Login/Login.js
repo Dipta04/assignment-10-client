@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import { FaGoogle,FaGithub } from "react-icons/fa";
@@ -87,9 +87,11 @@ const Login = () => {
                         {error}
                 </Form.Text><br/>
 
-                <Button variant="primary" type="submit">
+                <Button variant="outline-primary" type="submit">
                     Sign In
                 </Button><br></br>
+                <h5 className='my-3 text-warning'>New at this website.Please Register first!!</h5>
+                <Link to='/register'> <Button variant="outline-primary">Register</Button></Link>
                 <div className='mt-2'>
                 <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-success"><FaGoogle></FaGoogle> Sign in with Google</Button><br/>
                 <Button onClick={handleGitHubSignIn} variant="outline-secondary"><FaGithub></FaGithub> Sign in with GitHub</Button>
