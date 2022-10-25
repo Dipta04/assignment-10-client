@@ -20,7 +20,10 @@ const Header = () => {
                             <Nav.Link><Link className='text-decoration-none text-white' to='/blog'>Blog</Link></Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link><Link className='text-decoration-none text-white' to='/login'>Login</Link></Nav.Link>
+                            <Nav.Link>
+                                <Link className='text-decoration-none text-white me-3' to='/login'>Login</Link>
+                                <Link className='text-decoration-none text-white' to='/register'>Register</Link>
+                            </Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
                                 Dank memes
                             </Nav.Link>
