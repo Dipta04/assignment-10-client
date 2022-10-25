@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -14,10 +15,10 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link><Link className='text-decoration-none text-white' to='/home'>Home</Link></Nav.Link>
+                            <Nav.Link><Button variant="outline-secondary"><Link className='text-decoration-none text-white' to='/home'>Home</Link></Button></Nav.Link>
                             <Nav.Link href="#features">Courses</Nav.Link>
                             <Nav.Link href="#pricing">FAQ</Nav.Link>
-                            <Nav.Link><Link className='text-decoration-none text-white' to='/blog'>Blog</Link></Nav.Link>
+                            <Nav.Link><Button variant="outline-secondary"><Link className='text-decoration-none text-white' to='/blog'>Blog</Link></Button></Nav.Link>
                         </Nav>
                         <Nav>
                             <Nav.Link>
