@@ -24,7 +24,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/blog',
-                element:<PrivateRoute><Blog></Blog></PrivateRoute>
+                element:<Blog></Blog>
             },
             {
                 path:'/login',
@@ -36,17 +36,17 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/courses',
-                element:<Course></Course>,
+                element:<PrivateRoute><Course></Course></PrivateRoute>,
                 loader:()=> fetch('http://localhost:5000/courses')
             },
             {
                 path:'/courses/:id',
-                element:<CourseDetails></CourseDetails>,
+                element:<PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
                 loader:({params}) => fetch (`http://localhost:5000/courses/${params.id}`)
             },
             {
                 path:'/premium/:id',
-                element:<Premium></Premium>,
+                element:<PrivateRoute><Premium></Premium></PrivateRoute>,
                 loader:({params}) => fetch(`http://localhost:5000/premium/${params.id}`)
             }
         ]

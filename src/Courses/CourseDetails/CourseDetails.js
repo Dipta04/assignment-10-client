@@ -30,9 +30,9 @@ const CourseDetails = () => {
                 <Card.Title className='fw-bold'>{title}</Card.Title>
                 <Card.Img className='img-fluid' style={{ height: '450px' }} variant="top" src={image} />
                 <Card.Body>
-                    <Card.Title>{details}</Card.Title>
-                    <Card.Text>Price:${price}</Card.Text>
-                    <Card.Text>Duration:{duration}</Card.Text>
+                    <Card.Title className='text-dark'>{details}</Card.Title>
+                    <Card.Text className='text-dark'>Price:${price}</Card.Text>
+                    <Card.Text className='text-dark'>Duration:{duration}</Card.Text>
 
                     <Link to='/courses'><Button variant="primary">Go to all</Button></Link><br></br>
                     <Link to={`/premium/${courseDetail.id}`}><Button variant="warning" className='text-white fw-bold mt-2'>Get Premium Access</Button></Link>

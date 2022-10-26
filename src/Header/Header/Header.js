@@ -26,10 +26,10 @@ const Header = () => {
                     <Navbar.Brand>
                         <img
                             alt=""
-                            src="https://png.pngtree.com/png-vector/20190304/ourmid/pngtree-abstract-square-business-company-logo-black-background-png-image_771323.jpg"
-                            width="30"
-                            height="30"
-                            className="d-inline-block align-top"
+                            src="https://png.pngtree.com/element_pic/17/03/24/007195df20f05557152a28173d202d39.jpg"
+                            width="40"
+                            height="40"
+                            className="d-inline-block align-top me-2"
                         />
                         <Link className='text-decoration-none fw-bolder text-primary fst-italic' to='/home'>Happy Learning</Link>
                     </Navbar.Brand>

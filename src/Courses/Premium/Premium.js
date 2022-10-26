@@ -19,8 +19,8 @@ const Premium = () => {
                 <Card.Title>{title}</Card.Title>
                     <Card.Img className='img-fluid' style={{ height: '450px' }} variant="top" src={image} />
                     <Card.Body>
-                        <Card.Text>Price:${price}</Card.Text>
-                        <Card.Text>Duration:{duration}</Card.Text>
+                        <Card.Text className='text-dark'>Price:${price}</Card.Text>
+                        <Card.Text className='text-dark'>Duration:{duration}</Card.Text>
 
                         <Link to='/courses'><Button variant="primary">Go to all</Button></Link>
                     </Card.Body>
