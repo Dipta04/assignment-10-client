@@ -10,7 +10,7 @@ import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
 
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, toggleTheme } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
@@ -31,7 +31,7 @@ const Header = () => {
                             height="30"
                             className="d-inline-block align-top"
                         />
-                        <Link className='text-decoration-none text-info fw-bold' to='/home'>Happy Learning</Link>
+                        <Link className='text-decoration-none fw-bolder text-primary fst-italic' to='/home'>Happy Learning</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -39,6 +39,7 @@ const Header = () => {
                             <Nav.Link><Button variant="outline-secondary"><Link className='text-decoration-none text-white' to='/home'>Home</Link></Button></Nav.Link>
                             <Nav.Link><Button variant="outline-secondary"><Link className='text-decoration-none text-white' to='/courses'>Courses</Link></Button></Nav.Link>
                             <Nav.Link><Button className='text-white' variant="outline-secondary">FAQ</Button></Nav.Link>
+                            <Nav.Link><Button className='text-white' onClick={toggleTheme} variant="outline-secondary">Toggle</Button></Nav.Link>
                             <Nav.Link><Button variant="outline-secondary"><Link className='text-decoration-none text-white' to='/blog'>Blog</Link></Button></Nav.Link>
                         </Nav>
                         <Nav>

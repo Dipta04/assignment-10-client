@@ -3,12 +3,15 @@ import { createContext } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../../Firebase/Firebase.config';
 import { useEffect } from 'react';
+import '../Theme/Theme.css'
 
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
+    
+     const [theme,setTheme] = useState('light');
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -46,8 +49,22 @@ const AuthProvider = ({children}) => {
             unsubscribe();
         }
     },[])
+  
+    // theme change
+    const toggleTheme= () =>{
+        if(theme === 'light')
+        {
+            setTheme('dark');
+        }
+        else{
+            setTheme('light');
+        }
+    }
+    useEffect(()=>{
+            document.body.className = theme;
+    },[theme])
 
-    const authInfo = {user,loading,providerLogin,createUser,signIn,logOut,setLoading};
+    const authInfo = {user,loading,providerLogin,createUser,signIn,logOut,setLoading, toggleTheme,theme};
 
     return (
         <AuthContext.Provider value={authInfo}>

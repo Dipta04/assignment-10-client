@@ -8,7 +8,9 @@ const LeftSide = ({ c }) => {
         <div className='w-100 mt-5'>
 
             <ListGroup className='me-5'>
-                <ListGroup.Item><Link  to={`/courses/${c.id}`}>{title}</Link></ListGroup.Item>
+                
+                <ListGroup.Item><Link className='text-decoration-none' to={`/courses/${c.id}`}><li>{title}</li></Link></ListGroup.Item>
+                
             </ListGroup>
 
 
