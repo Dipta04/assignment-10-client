@@ -15,8 +15,7 @@ const Course = () => {
                     ></LeftSide>)
                 }
             </div>
-            <div>
-            <h2>{AllCourses.length}</h2>
+            <div className='mt-2'>
             {
                 AllCourses.map(course => <RightSide
                 key={course.id}
