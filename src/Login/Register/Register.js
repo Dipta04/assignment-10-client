@@ -53,6 +53,7 @@ const Register = () => {
             })
     }
 
+
     const handleAccepted = event => {
         setAccepted(event.target.checked);
     }
