@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
 
@@ -58,7 +59,7 @@ const Register = () => {
 
     return (
         <div>
-
+            <h1 className='d-flex justify-content-center text-primary fw-bolder'>Register Please</h1>
             <Form onSubmit={handleSubmit} className='w-50 mx-auto mt-5'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
@@ -94,7 +95,9 @@ const Register = () => {
 
                 <Button variant="primary" type="submit" disabled={!accepted}>
                     Register
-                </Button>
+                </Button><br />
+                <h5 className='my-3 text-warning'>Already have an Account.Log In then!!</h5>
+                <Link to='/login'> <Button variant="outline-primary">Login</Button></Link>
             </Form>
 
         </div>

@@ -54,6 +54,10 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            if(user)
+            {
+                navigate(from, {replace: true});
+            }
         })
         .catch(error => console.error(error))
     }
@@ -63,14 +67,19 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            if(user)
+            {
+                navigate(from, {replace: true});
+            }
         })
         .catch(error => console.error(error))
     }
 
     return (
         <div>
-            
+            <h1 className='d-flex justify-content-center text-primary fw-bolder'>Login Please</h1>
             <Form onSubmit={handleSubmit} className='w-50 mx-auto mt-5'>
+                
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control name="email" type="email" placeholder="Enter email" />
@@ -88,7 +97,7 @@ const Login = () => {
                 </Form.Text><br/>
 
                 <Button variant="outline-primary" type="submit">
-                    Sign In
+                    Login
                 </Button><br></br>
                 <h5 className='my-3 text-warning'>New at this website.Please Register first!!</h5>
                 <Link to='/register'> <Button variant="outline-primary">Register</Button></Link>

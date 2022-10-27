@@ -24,7 +24,7 @@ const Home = () => {
                     </Card.Text>
                     </div>
                     <div>
-                    <Card.Img className='w-75' style={{height:"800px"}} src={background} alt="Card image"/>
+                    <Card.Img className='w-100' style={{height:"800px"}} src={background} alt="Card image"/>
                     </div>
                 </Card.ImgOverlay>
             </Card>

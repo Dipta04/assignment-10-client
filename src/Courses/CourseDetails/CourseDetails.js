@@ -21,7 +21,7 @@ const CourseDetails = () => {
             <h2 className='text-warning'>Details About The Course....</h2>
             </div>
             <div className='ms-2 mt-1'>
-            <Pdf targetRef={ref} filename="code-example.pdf">
+            <Pdf targetRef={ref} filename="Detail.pdf">
                     {({ toPdf }) => <Button variant="success" onClick={toPdf}>Generate Pdf</Button>}
             </Pdf>
             </div>
@@ -39,7 +39,6 @@ const CourseDetails = () => {
 
                 </Card.Body>
             </Card>
-
         </div>
     );
 };

@@ -36,18 +36,18 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/courses',
-                element:<PrivateRoute><Course></Course></PrivateRoute>,
-                loader:()=> fetch('http://localhost:5000/courses')
+                element:<Course></Course>,
+                loader:()=> fetch('https://assignment-10-server-fawn.vercel.app/courses')
             },
             {
                 path:'/courses/:id',
-                element:<PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
-                loader:({params}) => fetch (`http://localhost:5000/courses/${params.id}`)
+                element:<CourseDetails></CourseDetails>,
+                loader:({params}) => fetch (`https://assignment-10-server-fawn.vercel.app/courses/${params.id}`)
             },
             {
                 path:'/premium/:id',
                 element:<PrivateRoute><Premium></Premium></PrivateRoute>,
-                loader:({params}) => fetch(`http://localhost:5000/premium/${params.id}`)
+                loader:({params}) => fetch(`https://assignment-10-server-fawn.vercel.app/premium/${params.id}`)
             }
         ]
     },

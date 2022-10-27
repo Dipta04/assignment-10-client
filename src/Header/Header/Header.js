@@ -39,7 +39,7 @@ const Header = () => {
                             <Nav.Link><Button variant="outline-secondary"><Link className='text-decoration-none text-white' to='/home'>Home</Link></Button></Nav.Link>
                             <Nav.Link><Button variant="outline-secondary"><Link className='text-decoration-none text-white' to='/courses'>Courses</Link></Button></Nav.Link>
                             <Nav.Link><Button className='text-white' variant="outline-secondary">FAQ</Button></Nav.Link>
-                            <Nav.Link><Button className='text-white' onClick={toggleTheme} variant="outline-secondary">Toggle</Button></Nav.Link>
+                            <Nav.Link><Button className='text-white' onClick={toggleTheme} variant="outline-secondary">Toggle theme</Button></Nav.Link>
                             <Nav.Link><Button variant="outline-secondary"><Link className='text-decoration-none text-white' to='/blog'>Blog</Link></Button></Nav.Link>
                         </Nav>
                         <Nav>
@@ -47,7 +47,10 @@ const Header = () => {
                                 {
                                     user?.uid
                                         ?
+                                        <>
+                                        <span className='text-white'>{user?.displayName}</span>
                                         <Button variant="outline-secondary" className='text-white' onClick={handleLogOut}>Log out</Button>
+                                        </>
                                         :
                                         <>
                                             <Button className='me-3' variant="outline-secondary"><Link className='text-decoration-none text-white' to='/login'>Login</Link></Button>
